@@ -82,9 +82,9 @@ use App\Mail\ForgotMail;
 
 // Auth::routes();
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 // Route::get('/home', 'HomeController@homepage')->name('home');
 // Auth::routes();
@@ -114,8 +114,8 @@ Route::get('/', function () {
 // Route::get('/get-pesan', 'FlashMessageController@pesan');
 // Route::get('/get-pesan', [FlashMessageController::class, 'pesan']);
 
-Route::get('user-profile', [ProfileController::class, 'profile']);
+// Route::get('user-profile', [ProfileController::class, 'profile']);
 
-Route::get('category', [CategoryController::class, 'index']);
+// Route::get('category', [CategoryController::class, 'index']);
 
 

@@ -5,28 +5,37 @@ namespace App\Http\Controllers;
 // all products
 use App\Models\Clothes;
 use App\Models\Cars;
+use App\Models\Furniture;
+use App\Models\electronic;
+use App\Models\property;
 
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
 
-	@return void
 
-	public function__construct(){
-		$this->middleware('auth');
-	}
+    public function getPost(){
+        $random_cars = Cars::all()->random(2);
+        $random_clothes = Clothes::all()->random(2);
+        $random_furniture = Furniture::all()->random(2);
+        $random_electronic = electronic::all()->random(2);
+        $random_property = property::all()->random(2);
 
-	@return \Illuminate\Http\Response
 
-    public function homepage(){
-    	// $furniture = Furniture::all();
-    	// $clothes = Clothes::all();
-    	// return [$furniture, $clothes];
-    	// return "Welcome to home page after login";
-    	// return view('home', ['furniture'=>$furniture, 'clothes'=>$clothes]);
-    	return view('home');
+        $response=[
+            'cars' => $random_cars,
+            'clothes'=>$random_clothes,
+            'furniture'=>$random_furniture,
+            'electronic'=>$random_electronic,
+            'property'=>$random_property
+
+        ];
+
+        return response()->json($response);
     }
+
+
 
     
 }

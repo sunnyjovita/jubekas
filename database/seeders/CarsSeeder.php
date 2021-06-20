@@ -27,7 +27,8 @@ class CarsSeeder extends Seeder
 	        	'description'=>'color: silver',
 	        	'image'=>"/web app project new/images/fashion.jpg",
                 'location'=>'Jakarta',
-	        	'categories'=>'3'
+	        	'categories'=>'4',
+                'owner'=>'25'
 
         	],
         	[
@@ -40,7 +41,8 @@ class CarsSeeder extends Seeder
 	        	'description'=>'color: white',
 	        	'image'=>"/web app project new/images/fashion.jpg",
                 'location'=>'Bandung',
-	        	'categories'=>'3'
+	        	'categories'=>'4',
+                'owner'=>'25'
 
         	],
             [
@@ -53,7 +55,8 @@ class CarsSeeder extends Seeder
                 'description'=>'color: grey',
                 'image'=>"/web app project new/images/fashion.jpg",
                 'location'=>'Bekasi',
-                'categories'=>'3'
+                'categories'=>'4', 
+                'owner'=>'26'
 
             ]
            

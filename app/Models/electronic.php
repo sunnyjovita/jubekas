@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Cars extends Model
+class electronic extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
-    protected $table = "cars";
+    protected $table = "electronic";
     protected $connection = 'mysql2';
 
-    protected $fillable = ['title', 'brand', 'year', 'distance', 'condition', 'price', 'description', 'image', 'location','categories', 'owner'];
+    protected $fillable = ['title', 'type', 'brand', 'condition', 'price', 'description', 'image', 'location','categories'];
 }

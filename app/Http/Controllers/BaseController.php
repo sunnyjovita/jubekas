@@ -16,7 +16,6 @@ class BaseController extends Controller
 
     	return response()->json($response, $code);
 
-
     }
 
     public function responseError($error, $code= 422, $errorDetails=[]){

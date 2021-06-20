@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cars;
 use App\Models\Clothes;
+use App\Models\Furniture;
+use App\Models\electronic;
+use App\Models\property;
+
 use Session;
 
 class CarsController extends Controller
@@ -16,26 +20,15 @@ class CarsController extends Controller
      */
     public function cars()
     {
-        //
-       // $cars = Cars::all();
-        // return view('cars', ['cars'=>$cars]);  
 
         // api
         $cars = Cars::all();
-        // return $cars;
         return response()->json($cars);
-        // return ['cars'=>$cars];
-        // return response()->json([
-            // 'cars' => $cars
-        // ]);
+      
     }
 
     public function details($id){
         
-        // $carsdetails = Cars::find($id);
-        // return view('detailsCars', ['cars'=>$carsdetails]);
-
-
         // api
         $carsdetails = Cars::find($id);
         return response()->json($carsdetails);
@@ -46,6 +39,9 @@ class CarsController extends Controller
         // return $req->input();
         $carsSearch = Cars::where('title', 'like', '%'.$req->input('query').'%')->get(); 
         $clothesSearch = Clothes::where('title', 'like', '%'.$req->input('query').'%')->get();
+        $furnitureSearch = Furniture::where('title', 'like', '%'.$req->input('query').'%')->get();
+         $electronicSearch = electronic::where('title', 'like', '%'.$req->input('query').'%')->get();
+          $propertySearch = property::where('title', 'like', '%'.$req->input('query').'%')->get();
 
         // return view('search', ['cars'=>$carsSearch, 'clothes'=>$clothesSearch]);
 
@@ -54,7 +50,10 @@ class CarsController extends Controller
         // return response()->json([$carsSearch, $clothesSearch]);
         $response = [
             'cars'=>$carsSearch,
-            'clothes'=>$clothesSearch
+            'clothes'=>$clothesSearch,
+            'furniture'=>$furnitureSearch,
+            'property'=>$propertySearch,
+            'electronic'=>$electronicSearch
 
         ];
         return response()->json($response);
@@ -62,22 +61,14 @@ class CarsController extends Controller
 
     }
 
-    // public function search($title){
-    //     $carsSearch = Cars::where('title', 'like', '%'.$title.'%')->get(); 
-    //     $clothesSearch = Clothes::where('title', 'like', '%'.$title.'%')->get();
-
-    //     return response()->json([$carsSearch, $clothesSearch]); 
+    // static function chatSeller(Request $req){
+    //     // if($req->session()->has('user')){
+    //     //     return "Hello this is chat seller page";
+    //     // }
+    //     // else{
+    //     //     return redirect('/login');
+    //     // }
     // }
-
-
-    static function chatSeller(Request $req){
-        // if($req->session()->has('user')){
-        //     return "Hello this is chat seller page";
-        // }
-        // else{
-        //     return redirect('/login');
-        // }
-    }
 
     /**
      * Show the form for creating a new resource.

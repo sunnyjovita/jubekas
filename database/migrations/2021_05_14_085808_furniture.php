@@ -13,27 +13,20 @@ class Furniture extends Migration
      */
     public function up()
     {
-        //// create the table
-        // Schema::create('furniture', function (Blueprint $table){
-        //     $table->increments('id');
-        //     $table->string('title');
-        //     $table->string('type');
-        //     $table->string('condition');
-        //     $table->decimal('price',9,0);
-        //     $table->longText('description');  
-        //     $table->string('image');
-        // });
 
         Schema::connection('mysql2')->create('furniture', function (Blueprint $table){
             $table->increments('id');
             $table->string('title');
             $table->string('type');
             $table->string('condition');
-            $table->decimal('price',9,0);
+            $table->string('price');
             $table->longText('description');  
+            $table->string('location');
             $table->string('image');
+            $table->integer('owner');
+            $table->unsignedInteger('categories');
+            $table->foreign('categories')->references('id')->on('categories'); 
         });
-
     }
 
     /**

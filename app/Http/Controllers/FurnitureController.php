@@ -1,13 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Session;
+use App\Models\Furniture;
 
 class FurnitureController extends Controller
 {
     //
-    $furniture = DB::table('furniture')->get();
+    public function furniture()
+    {
+        
+        $furniture = Furniture::all();
+        return response()->json($furniture);
+      
+    }
+
+    public function details($id){
+        
+        // api
+        $furnituredetails = Furniture::find($id);
+        return response()->json($furnituredetails);
+ 
+    }
+    
     
 
 }

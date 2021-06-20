@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Clothes extends Migration
+class Property extends Migration
 {
     /**
      * Run the migrations.
@@ -14,20 +14,26 @@ class Clothes extends Migration
     public function up()
     {
         //
-         // create the table
-        Schema::connection('mysql2')->create('clothes', function (Blueprint $table){
+          Schema::connection('mysql2')->create('property', function (Blueprint $table){
             $table->increments('id');
             $table->string('title');
             $table->string('type');
-            $table->string('condition');
-            $table->string('price');
-            $table->longText('description');
+            $table->string('landSize');
+            $table->string('buildingSize');
+            $table->string('address');
+            $table->string('bedrooms');
+            $table->string('bathrooms');
+            $table->string('year');
+            $table->string('certificate');
             $table->string('location');
+            $table->longText('description');
+            $table->string('price');
             $table->string('image'); 
             $table->integer('owner');
             $table->unsignedInteger('categories');
             $table->foreign('categories')->references('id')->on('categories'); 
         });
+    
     }
 
     /**

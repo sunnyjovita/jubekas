@@ -51,6 +51,7 @@ class UserController extends BaseController
 
 			// create token
 			$response = [
+                'id' => $user->id,
 				'token' => $user->createToken('MyToken')->accessToken,
 				'name' =>$user->name,
 				'email' => $user->email,

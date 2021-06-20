@@ -27,7 +27,8 @@ class ClothesSeeder extends Seeder
 	        	'description'=>'size: S, color: white',
 	        	'image'=>"public/web app project new/images/fashion.jpg",
                 'location'=>'Jakarta',
-                'categories'=>'1'
+                'categories'=>'1',
+                'owner'=>'26'
 
         	],
         	[
@@ -38,7 +39,8 @@ class ClothesSeeder extends Seeder
 	        	'description'=>'size: L, color: black',
 	        	'image'=>"public/web app project new/images/fashion.jpg",
                 'location'=>'Bekasi',
-                'categories'=>'1'
+                'categories'=>'1',
+                'owner'=>'25'
 
         	],
         	[
@@ -49,7 +51,8 @@ class ClothesSeeder extends Seeder
 	        	'description'=>'size: All Size, color: polkadot',
 	        	'image'=>"public/web app project new/images/fashion 1.jpg",
                 'location'=>'Depok',
-                'categories'=>'1'
+                'categories'=>'1',
+                'owner'=>'25'
         	]
         	
         ]);
