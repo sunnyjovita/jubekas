@@ -25,7 +25,7 @@ class CreateCarsTable extends Migration
             $table->longText('description');
             $table->string('image');
             $table->string('location');
-            $table->integere('owner');
+            $table->integer('owner');
             $table->unsignedInteger('categories');
             $table->foreign('categories')->references('id')->on('categories');
         });
