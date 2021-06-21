@@ -40,7 +40,7 @@ class ForgotPasswordController extends BaseController
         }
 
         $email = $req->input('email');
-           
+
            // check email exixts
         if(User::where('email', $email)->doesntExist()){
                 // return $this->responseError([
@@ -89,12 +89,12 @@ class ForgotPasswordController extends BaseController
             return response([
                 'message' => $exception->responseError()
             ], 400);
-            // return $exception;
-            // return response()->json(['message'=>'why error ']);
+//             return $exception;
+//             return response()->json(['message'=>'why error ']);
 
 
         }
-        
+
     }
 
     public function reset(Request $request, $token){
@@ -140,7 +140,7 @@ class ForgotPasswordController extends BaseController
 
         return response()->json(['message' => 'Congratulations! Your password has been changed successfully.']);
 
-            
+
 
     }
 
@@ -165,5 +165,5 @@ class ForgotPasswordController extends BaseController
 
     // }
 
-   
+
 }
