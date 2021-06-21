@@ -16,7 +16,7 @@ class HomeController extends Controller
 
 
     public function getPost(){
-        $random_cars = Cars::all()->random(2);
+        $random_cars = Cars::all()->random(1);
         $random_clothes = Clothes::all()->random(2);
         $random_furniture = Furniture::all()->random(2);
         $random_electronic = electronic::all()->random(2);
@@ -37,5 +37,5 @@ class HomeController extends Controller
 
 
 
-    
+
 }
