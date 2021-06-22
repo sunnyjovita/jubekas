@@ -71,7 +71,7 @@ class ForgotPasswordController extends BaseController
             Mail::send('MailText', $data, function($message) use ($to_email, $to_name) {
             $message->to($to_email)
                     ->subject('Jubekas Change Password');
-            $message->from('jubekas.id@gmail.com','Jubekas Website');
+            $message->from('jubekas@api.jubekas.com','Jubekas Website');
             });
 
             // return response()->json([])
