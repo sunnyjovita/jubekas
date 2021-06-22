@@ -25,16 +25,16 @@ class ContactController extends BaseController
         }
 
 
-        // check if email exist or no
+//        // check if email exist or no
         $email = $req->input('email');
-                   // check email exixts
-        if(User::where('email', $email)->doesntExist()){
-                // return $this->responseError([
-                //     'message' => 'User doesn\'t exists!'
-                // ], 404);
-            return response()->json(['message'=>'User does not exist!']);
-                // return 'user does not exists';
-        }
+//                   // check email exixts
+//        if(User::where('email', $email)->doesntExist()){
+//                // return $this->responseError([
+//                //     'message' => 'User doesn\'t exists!'
+//                // ], 404);
+//            return response()->json(['message'=>'User does not exist!']);
+//                // return 'user does not exists';
+//        }
 
          try{
 
