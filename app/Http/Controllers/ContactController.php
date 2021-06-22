@@ -49,7 +49,7 @@ class ContactController extends BaseController
             Mail::send('contact-us', $data, function($message) use ($to_email, $to_name) {
             $message->to($to_email)
                     ->subject('Thank you for contacting us');
-            $message->from('jubekas.id@gmail.com','Jubekas Website');
+            $message->from('jubekas@api.jubekas.com','Jubekas Website');
             });
 
             // return response()->json([])
