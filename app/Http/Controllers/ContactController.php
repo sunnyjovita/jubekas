@@ -27,14 +27,15 @@ class ContactController extends BaseController
 
 //        // check if email exist or no
         $email = $req->input('email');
+        $name = $req->input('name');
 //                   // check email exixts
-        if(User::where('email', $email)->doesntExist()){
-                 return $this->responseError([
-                     'message' => 'User doesn\'t exists!'
-                 ], 404);
-            return response()->json(['message'=>'User does not exist!']);
-                // return 'user does not exists';
-        }
+//        if(User::where('email', $email)->doesntExist()){
+//                 return $this->responseError([
+//                     'message' => 'User doesn\'t exists!'
+//                 ], 404);
+//            return response()->json(['message'=>'User does not exist!']);
+//                // return 'user does not exists';
+//        }
 
          try{
 
@@ -45,8 +46,8 @@ class ContactController extends BaseController
             // $to_name = Auth::user()->name;
             // $to_email = 'RECEIVER_EMAIL_ADDRESS';
             $to_email = $email;
-            $data = array('name'=>$to_name, "body" => "Thank You");
-            Mail::send('contact-us', $data, function($message) use ($to_email, $to_name) {
+            $data = array('name'=>$name, "body" => "Thank You");
+            Mail::send('contact-us', $data, function($message) use ($to_email, $name) {
             $message->to($to_email)
                     ->subject('Thank you for contacting us');
             $message->from('jubekas@api.jubekas.com','Jubekas Website');
